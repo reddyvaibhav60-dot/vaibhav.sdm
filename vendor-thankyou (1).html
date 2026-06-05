@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stall Request Received | The Deccan Bazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crimson:     #8B1E3F;
+  --crimson-deep:#5e142b;
+  --gold:        #D4AF37;
+  --gold-light:  #e8c84a;
+  --ivory:       #faf6ef;
+  --serif:       'Cormorant Garamond', Georgia, serif;
+  --sans:        'DM Sans', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--sans);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(160deg, var(--crimson-deep) 0%, #3a0d1e 100%);
+  position: relative;
+  overflow: hidden;
+}
+body::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle at 15% 85%, rgba(212,175,55,.12) 0%, transparent 55%),
+                    radial-gradient(circle at 85% 15%, rgba(212,175,55,.08) 0%, transparent 55%);
+}
+
+/* Decorative rings */
+.bg-ring {
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(212,175,55,.08);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+
+.card {
+  background: rgba(250,246,239,0.97);
+  border-radius:6px;
+  padding: 64px 56px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 32px 80px rgba(0,0,0,.3), 0 0 0 1px rgba(212,175,55,.2);
+  animation: cardIn .8s cubic-bezier(.22,.68,0,1.2) both;
+}
+
+@keyframes cardIn {
+  from { opacity:0; transform:scale(.92) translateY(20px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+
+.card-top-border {
+  position:absolute;
+  top:0; left:0; right:0;
+  height:4px;
+  background:linear-gradient(90deg, var(--crimson), var(--gold), var(--crimson));
+  border-radius:6px 6px 0 0;
+}
+
+.icon-wrap {
+  width: 88px; height: 88px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 28px;
+  box-shadow: 0 8px 28px rgba(139,30,63,.35);
+  font-size: 2.4rem;
+  animation: iconPop .6s .3s cubic-bezier(.22,.68,0,1.4) both;
+}
+
+@keyframes iconPop {
+  from { opacity:0; transform:scale(0.4); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+.badge {
+  display:inline-block;
+  background: rgba(212,175,55,.15);
+  border:1px solid rgba(212,175,55,.4);
+  color: var(--crimson);
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  padding:6px 16px;
+  border-radius:2px;
+  margin-bottom:20px;
+  animation: fadeUp .6s .4s ease both;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight:600;
+  color: var(--crimson-deep);
+  line-height:1.2;
+  margin-bottom:16px;
+  animation: fadeUp .6s .45s ease both;
+}
+
+h1 em { font-style:italic; color:var(--crimson); }
+
+.subtitle {
+  font-size:1.05rem;
+  color:#555;
+  line-height:1.7;
+  margin-bottom:36px;
+  animation: fadeUp .6s .5s ease both;
+}
+
+.steps {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-bottom:40px;
+  text-align:left;
+  animation: fadeUp .6s .55s ease both;
+}
+
+.step-item {
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  background:#fff;
+  border:1px solid rgba(139,30,63,.1);
+  border-radius:4px;
+  padding:16px 20px;
+}
+
+.step-icon {
+  width:36px; height:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg, rgba(212,175,55,.2), rgba(212,175,55,.1));
+  border:1px solid rgba(212,175,55,.35);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem;
+  flex-shrink:0;
+}
+
+.step-content-title {
+  font-size:.85rem;
+  font-weight:700;
+  color:var(--crimson-deep);
+  margin-bottom:3px;
+}
+.step-content-text {
+  font-size:.8rem;
+  color:#777;
+  line-height:1.5;
+}
+
+.btn {
+  display:inline-block;
+  background:var(--crimson);
+  color:#fff;
+  padding:16px 36px;
+  border-radius:3px;
+  font-weight:700;
+  font-size:.88rem;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:background .2s, transform .2s, box-shadow .2s;
+  box-shadow:0 4px 16px rgba(139,30,63,.3);
+  animation: fadeUp .6s .6s ease both;
+}
+.btn:hover {
+  background:var(--crimson-deep);
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(139,30,63,.4);
+}
+
+.footer-note {
+  font-size:.76rem;
+  color:#aaa;
+  margin-top:20px;
+  animation: fadeUp .6s .65s ease both;
+}
+.footer-note strong { color:var(--crimson); }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:560px){
+  .card { padding:40px 24px; }
+  h1 { font-size:1.9rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-ring" style="width:600px;height:600px;"></div>
+<div class="bg-ring" style="width:900px;height:900px;"></div>
+<div class="bg-ring" style="width:1200px;height:1200px;"></div>
+
+<div class="card">
+  <div class="card-top-border"></div>
+
+  <div class="icon-wrap">🎉</div>
+
+  <div class="badge">Application Received</div>
+
+  <h1>Your stall request<br>is <em>confirmed.</em></h1>
+
+  <p class="subtitle">
+    Welcome to The Deccan Bazaar family. Our team has received your application 
+    and will contact you within <strong>24 hours</strong> to finalise your stall.
+  </p>
+
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-icon">📞</div>
+      <div>
+        <div class="step-content-title">Expect a call within 24 hours</div>
+        <div class="step-content-text">Our team will confirm stall availability, share event details, and walk you through the booking process.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-icon">💳</div>
+      <div>
+        <div class="step-content-title">Secure your spot with payment</div>
+        <div class="step-content-text">Complete payment to lock in your stall. Stalls are allocated on a first-come, first-confirmed basis.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-icon">📦</div>
+      <div>
+        <div class="step-content-title">Prepare your collection</div>
+        <div class="step-content-text">We'll send you a complete vendor prep guide — setup instructions, display tips, and marketing assets.</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn">Back to Home</a>
+
+  <p class="footer-note">
+    Questions? WhatsApp us at <strong>+91 XXXXX XXXXX</strong><br>
+    or DM us on Instagram <strong>@thedeccanbazaar</strong>
+  </p>
+</div>
+
+</body>
+</html>

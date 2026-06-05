@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Registered! | The Deccan Bazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crimson:     #8B1E3F;
+  --crimson-deep:#5e142b;
+  --gold:        #D4AF37;
+  --gold-light:  #e8c84a;
+  --gold-pale:   #f5e9b8;
+  --ivory:       #faf6ef;
+  --serif:       'Cormorant Garamond', Georgia, serif;
+  --sans:        'DM Sans', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--sans);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background: linear-gradient(160deg, #6b4c0a 0%, #3d2a04 40%, #1a0a10 100%);
+  position:relative;
+  overflow:hidden;
+}
+body::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(212,175,55,.18) 0%, transparent 55%),
+                    radial-gradient(circle at 80% 20%, rgba(139,30,63,.2) 0%, transparent 55%);
+}
+
+/* Floating gold dots */
+.dot {
+  position:absolute;
+  border-radius:50%;
+  background:var(--gold);
+  opacity:.12;
+  animation:float linear infinite;
+}
+@keyframes float {
+  0%   { transform:translateY(0) scale(1); opacity:.12; }
+  50%  { opacity:.2; }
+  100% { transform:translateY(-100vh) scale(.5); opacity:0; }
+}
+
+.card {
+  background: rgba(250,246,239,0.97);
+  border-radius:6px;
+  padding:64px 56px;
+  max-width:620px;
+  width:100%;
+  text-align:center;
+  position:relative;
+  z-index:1;
+  box-shadow:0 32px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(212,175,55,.25);
+  animation: cardIn .8s cubic-bezier(.22,.68,0,1.2) both;
+}
+
+@keyframes cardIn {
+  from { opacity:0; transform:scale(.92) translateY(20px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+
+.card-top-border {
+  position:absolute;
+  top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg, var(--gold), var(--crimson), var(--gold));
+  border-radius:6px 6px 0 0;
+}
+
+.icon-wrap {
+  width:88px; height:88px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--gold), #b8941f);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 28px;
+  box-shadow:0 8px 28px rgba(212,175,55,.4);
+  font-size:2.4rem;
+  animation:iconPop .6s .3s cubic-bezier(.22,.68,0,1.4) both;
+}
+
+@keyframes iconPop {
+  from { opacity:0; transform:scale(.4) rotate(-20deg); }
+  to   { opacity:1; transform:scale(1) rotate(0); }
+}
+
+.badge {
+  display:inline-block;
+  background:rgba(212,175,55,.15);
+  border:1px solid rgba(212,175,55,.4);
+  color:var(--crimson);
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  padding:6px 16px;
+  border-radius:2px;
+  margin-bottom:20px;
+  animation:fadeUp .6s .4s ease both;
+}
+
+h1 {
+  font-family:var(--serif);
+  font-size:2.4rem;
+  font-weight:600;
+  color:var(--crimson-deep);
+  line-height:1.2;
+  margin-bottom:16px;
+  animation:fadeUp .6s .45s ease both;
+}
+h1 em { font-style:italic; color:var(--gold); }
+
+.subtitle {
+  font-size:1.05rem;
+  color:#555;
+  line-height:1.7;
+  margin-bottom:36px;
+  animation:fadeUp .6s .5s ease both;
+}
+
+/* What to expect */
+.perks {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:40px;
+  text-align:left;
+  animation:fadeUp .6s .55s ease both;
+}
+
+.perk {
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  background:#fff;
+  border:1px solid rgba(139,30,63,.1);
+  border-radius:4px;
+  padding:16px;
+}
+.perk-icon {
+  font-size:1.3rem;
+  flex-shrink:0;
+  margin-top:1px;
+}
+.perk-title {
+  font-size:.82rem;
+  font-weight:700;
+  color:var(--crimson-deep);
+  margin-bottom:3px;
+}
+.perk-text { font-size:.76rem; color:#888; line-height:1.5; }
+
+/* Social share nudge */
+.social-nudge {
+  background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(139,30,63,.06));
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:4px;
+  padding:20px 24px;
+  margin-bottom:32px;
+  animation:fadeUp .6s .58s ease both;
+}
+.social-nudge-text {
+  font-family:var(--serif);
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--crimson-deep);
+  margin-bottom:10px;
+}
+.social-nudge-sub {
+  font-size:.78rem;
+  color:#888;
+}
+.social-nudge-sub strong { color:var(--crimson); }
+
+.btn-row {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  animation:fadeUp .6s .6s ease both;
+}
+
+.btn-primary {
+  background:var(--crimson);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:3px;
+  font-weight:700;
+  font-size:.85rem;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:background .2s, transform .2s;
+  box-shadow:0 4px 16px rgba(139,30,63,.3);
+}
+.btn-primary:hover { background:var(--crimson-deep); transform:translateY(-2px); }
+
+.btn-outline {
+  background:transparent;
+  color:var(--crimson);
+  padding:14px 28px;
+  border-radius:3px;
+  border:1.5px solid var(--crimson);
+  font-weight:600;
+  font-size:.85rem;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:all .2s;
+}
+.btn-outline:hover { background:var(--crimson); color:#fff; transform:translateY(-2px); }
+
+.footer-note {
+  font-size:.76rem;
+  color:#aaa;
+  margin-top:24px;
+  animation:fadeUp .6s .65s ease both;
+}
+.footer-note strong { color:var(--gold); }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:560px){
+  .card { padding:40px 24px; }
+  h1 { font-size:1.9rem; }
+  .perks { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Floating dots -->
+<div class="dot" style="width:8px;height:8px;left:10%;animation-duration:8s;animation-delay:0s;top:100%"></div>
+<div class="dot" style="width:5px;height:5px;left:25%;animation-duration:12s;animation-delay:2s;top:100%"></div>
+<div class="dot" style="width:10px;height:10px;left:60%;animation-duration:9s;animation-delay:1s;top:100%"></div>
+<div class="dot" style="width:6px;height:6px;left:75%;animation-duration:11s;animation-delay:3s;top:100%"></div>
+<div class="dot" style="width:4px;height:4px;left:88%;animation-duration:7s;animation-delay:.5s;top:100%"></div>
+
+<div class="card">
+  <div class="card-top-border"></div>
+
+  <div class="icon-wrap">🎊</div>
+
+  <div class="badge">You're On The List</div>
+
+  <h1>See you at the<br><em>Bazaar!</em></h1>
+
+  <p class="subtitle">
+    You've successfully registered for The Deccan Bazaar. Get ready to discover 
+    100+ handpicked fashion, jewellery and lifestyle brands from across Hyderabad.
+  </p>
+
+  <div class="perks">
+    <div class="perk">
+      <div class="perk-icon">📍</div>
+      <div>
+        <div class="perk-title">Event Updates</div>
+        <div class="perk-text">You'll be the first to know the date, venue, and featured brands.</div>
+      </div>
+    </div>
+    <div class="perk">
+      <div class="perk-icon">🎁</div>
+      <div>
+        <div class="perk-title">Exclusive Deals</div>
+        <div class="perk-text">Registered visitors get early access and special day-one offers.</div>
+      </div>
+    </div>
+    <div class="perk">
+      <div class="perk-icon">✨</div>
+      <div>
+        <div class="perk-title">Brand Previews</div>
+        <div class="perk-text">We'll share sneak peeks of the brands exhibiting before the event.</div>
+      </div>
+    </div>
+    <div class="perk">
+      <div class="perk-icon">📱</div>
+      <div>
+        <div class="perk-title">WhatsApp Reminders</div>
+        <div class="perk-text">We'll send a reminder the day before so you don't miss out.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-nudge">
+    <div class="social-nudge-text">Know someone who'd love this?</div>
+    <div class="social-nudge-sub">Share The Deccan Bazaar with your friends — tag us <strong>@thedeccanbazaar</strong> on Instagram</div>
+  </div>
+
+  <div class="btn-row">
+    <a href="index.html" class="btn-primary">Back to Home</a>
+    <a href="https://instagram.com/thedeccanbazaar" class="btn-outline">Follow Us</a>
+  </div>
+
+  <p class="footer-note">
+    Updates will be sent to your WhatsApp &amp; email.<br>
+    Questions? DM us at <strong>@thedeccanbazaar</strong>
+  </p>
+</div>
+
+</body>
+</html>

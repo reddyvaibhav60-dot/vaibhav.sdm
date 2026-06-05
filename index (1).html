@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Deccan Bazaar — Hyderabad's Premier Exhibition for Fashion & Lifestyle Brands</title>
+<meta name="description" content="Book your stall at The Deccan Bazaar — Hyderabad's most celebrated exhibition for boutique owners, saree entrepreneurs, jewellery sellers and D2C brands.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --crimson:     #8B1E3F;
+  --crimson-deep:#5e142b;
+  --crimson-soft:#a82549;
+  --gold:        #D4AF37;
+  --gold-light:  #e8c84a;
+  --gold-pale:   #f5e9b8;
+  --ivory:       #faf6ef;
+  --ink:         #1a0a10;
+  --ink-soft:    #3d1c27;
+  --muted:       #7a5060;
+  --border:      rgba(212,175,55,0.25);
+  --border-soft: rgba(139,30,63,0.12);
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family: var(--sans);
+  background: var(--ivory);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+
+/* ─── UTILITY ─── */
+.gold { color: var(--gold); }
+.crimson { color: var(--crimson); }
+.serif { font-family: var(--serif); }
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--ivory); }
+::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 48px;
+  background: rgba(250,246,239,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .3s;
+}
+.nav.scrolled { box-shadow: 0 4px 24px rgba(139,30,63,.08); }
+.nav-logo {
+  font-family: var(--serif);
+  font-size:1.5rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  color: var(--crimson);
+}
+.nav-logo span { color: var(--gold); }
+.nav-cta {
+  background: var(--crimson);
+  color:#fff;
+  padding:10px 24px;
+  border-radius:2px;
+  font-size:.82rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition: background .2s, transform .2s;
+}
+.nav-cta:hover { background: var(--crimson-deep); transform:translateY(-1px); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  position:relative;
+  overflow:hidden;
+}
+.hero-left {
+  background: var(--crimson-deep);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding: 120px 60px 80px;
+  position:relative;
+  overflow:hidden;
+}
+/* Decorative pattern on left */
+.hero-left::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(212,175,55,.12) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(212,175,55,.08) 0%, transparent 50%);
+}
+.hero-left::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.hero-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: rgba(212,175,55,.15);
+  border: 1px solid rgba(212,175,55,.35);
+  color: var(--gold);
+  padding:7px 16px;
+  border-radius:2px;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:32px;
+  width:fit-content;
+  animation: fadeUp .8s ease both;
+}
+.hero-badge::before {
+  content:'';
+  width:6px; height:6px;
+  background:var(--gold);
+  border-radius:50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:.5; transform:scale(1.4); }
+}
+.hero-heading {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight:600;
+  line-height:1.1;
+  color:#fff;
+  margin-bottom:12px;
+  animation: fadeUp .9s .1s ease both;
+}
+.hero-heading em {
+  font-style:italic;
+  color:var(--gold);
+  display:block;
+}
+.hero-subhead {
+  font-family:var(--serif);
+  font-size:1.25rem;
+  font-weight:300;
+  color:rgba(255,255,255,.7);
+  line-height:1.6;
+  margin-bottom:40px;
+  max-width:420px;
+  animation: fadeUp 1s .2s ease both;
+}
+.hero-proof {
+  display:flex;
+  gap:32px;
+  margin-bottom:48px;
+  animation: fadeUp 1s .3s ease both;
+}
+.proof-item {
+  text-align:center;
+}
+.proof-num {
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:600;
+  color:var(--gold);
+  line-height:1;
+}
+.proof-label {
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  margin-top:4px;
+}
+.proof-divider {
+  width:1px;
+  background:rgba(212,175,55,.25);
+  align-self:stretch;
+}
+.hero-actions {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-width:360px;
+  animation: fadeUp 1s .4s ease both;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--crimson-deep);
+  padding:16px 32px;
+  border-radius:2px;
+  font-weight:700;
+  font-size:.88rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:center;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(212,175,55,.3);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform:translateY(-2px);
+  box-shadow: 0 8px 32px rgba(212,175,55,.4);
+}
+.btn-secondary {
+  background: transparent;
+  color:#fff;
+  padding:16px 32px;
+  border-radius:2px;
+  border:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  font-size:.88rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:center;
+  transition: border-color .2s, background .2s;
+}
+.btn-secondary:hover {
+  border-color:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.06);
+}
+.urgency-note {
+  font-size:.76rem;
+  color:rgba(255,255,255,.45);
+  margin-top:12px;
+  animation: fadeUp 1s .5s ease both;
+}
+.urgency-note strong { color:var(--gold); }
+
+/* Hero right */
+.hero-right {
+  background: #f0e8d8;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-right-inner {
+  width:100%;
+  height:100%;
+  background: linear-gradient(135deg, #e8dcc8 0%, #d4c4a0 50%, #c8b08a 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+/* Decorative mandala/geometric overlay */
+.hero-visual {
+  width:420px;
+  height:420px;
+  position:relative;
+}
+.hero-visual svg {
+  width:100%;
+  height:100%;
+  opacity:.18;
+}
+.hero-visual-text {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-visual-title {
+  font-family:var(--serif);
+  font-size:3.5rem;
+  font-weight:700;
+  color:var(--crimson-deep);
+  line-height:1;
+  letter-spacing:.02em;
+}
+.hero-visual-sub {
+  font-family:var(--serif);
+  font-size:1rem;
+  font-weight:400;
+  color:var(--muted);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-top:8px;
+}
+.hero-visual-tagline {
+  font-size:.78rem;
+  color:var(--muted);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-top:20px;
+  padding:8px 20px;
+  border:1px solid var(--border-soft);
+  border-radius:2px;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ─── TRUST BAR ─── */
+.trust-bar {
+  background: var(--crimson);
+  padding:20px 48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:48px;
+  flex-wrap:wrap;
+  border-top:2px solid var(--gold);
+}
+.trust-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:rgba(255,255,255,.85);
+  font-size:.8rem;
+  font-weight:500;
+  letter-spacing:.05em;
+}
+.trust-icon {
+  width:32px; height:32px;
+  background: rgba(212,175,55,.2);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem;
+  flex-shrink:0;
+}
+
+/* ─── SECTION SHELL ─── */
+.section {
+  padding: 100px 48px;
+  max-width:1280px;
+  margin:0 auto;
+}
+.section-label {
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.section-label::before {
+  content:'';
+  width:32px; height:1px;
+  background:var(--gold);
+}
+.section-title {
+  font-family:var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight:600;
+  color:var(--ink);
+  line-height:1.15;
+  margin-bottom:20px;
+}
+.section-title em { font-style:italic; color:var(--crimson); }
+.section-body {
+  font-size:1.05rem;
+  color:var(--muted);
+  line-height:1.75;
+  max-width:580px;
+}
+
+/* ─── PAIN SECTION ─── */
+.pain-section {
+  background: var(--ink);
+  padding:100px 0;
+  position:relative;
+  overflow:hidden;
+}
+.pain-section::before {
+  content:'';
+  position:absolute;
+  top:-100px; left:-100px;
+  width:500px; height:500px;
+  background: radial-gradient(circle, rgba(139,30,63,.3) 0%, transparent 70%);
+}
+.pain-inner {
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 48px;
+}
+.pain-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  margin-top:56px;
+  align-items:start;
+}
+.pain-copy .section-label { color:var(--gold); }
+.pain-copy .section-title { color:#fff; }
+.pain-copy .section-body { color:rgba(255,255,255,.6); max-width:480px; }
+.pain-quote {
+  font-family:var(--serif);
+  font-size:1.6rem;
+  font-weight:400;
+  font-style:italic;
+  color:rgba(255,255,255,.85);
+  line-height:1.5;
+  margin:32px 0;
+  padding-left:24px;
+  border-left:3px solid var(--gold);
+}
+.pain-cards {
+  display:grid;
+  gap:16px;
+}
+.pain-card {
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:4px;
+  padding:24px 28px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  transition:border-color .3s, background .3s;
+}
+.pain-card:hover {
+  border-color:rgba(212,175,55,.3);
+  background:rgba(212,175,55,.04);
+}
+.pain-card-icon {
+  width:40px; height:40px;
+  background:rgba(212,175,55,.12);
+  border-radius:2px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem;
+  flex-shrink:0;
+}
+.pain-card-title {
+  font-weight:600;
+  color:#fff;
+  margin-bottom:6px;
+  font-size:.92rem;
+}
+.pain-card-text {
+  font-size:.84rem;
+  color:rgba(255,255,255,.5);
+  line-height:1.6;
+}
+
+/* ─── SOLUTION SECTION ─── */
+.solution-section { background: var(--ivory); }
+.solution-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+  margin-top:64px;
+}
+.solution-cards { display:grid; gap:20px; }
+.sol-card {
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:4px;
+  padding:28px 32px;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  transition:box-shadow .3s, transform .3s;
+  box-shadow:0 2px 12px rgba(139,30,63,.04);
+}
+.sol-card:hover {
+  box-shadow:0 8px 32px rgba(139,30,63,.1);
+  transform:translateY(-3px);
+}
+.sol-num {
+  font-family:var(--serif);
+  font-size:2.2rem;
+  font-weight:600;
+  color:var(--gold);
+  line-height:1;
+  flex-shrink:0;
+  width:40px;
+}
+.sol-title {
+  font-weight:700;
+  color:var(--crimson);
+  margin-bottom:6px;
+  font-size:.95rem;
+}
+.sol-text { font-size:.88rem; color:var(--muted); line-height:1.65; }
+
+/* ─── WHO SECTION ─── */
+.who-section {
+  background: linear-gradient(160deg, var(--crimson-deep) 0%, #3a0d1e 100%);
+  padding:100px 0;
+  position:relative;
+  overflow:hidden;
+}
+.who-section::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.who-inner {
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 48px;
+}
+.who-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:56px;
+}
+.who-card {
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(212,175,55,.2);
+  border-radius:4px;
+  padding:36px 28px;
+  text-align:center;
+  transition:background .3s, transform .3s;
+}
+.who-card:hover {
+  background:rgba(212,175,55,.08);
+  transform:translateY(-4px);
+}
+.who-emoji { font-size:2.4rem; margin-bottom:16px; }
+.who-title {
+  font-family:var(--serif);
+  font-size:1.3rem;
+  font-weight:600;
+  color:#fff;
+  margin-bottom:10px;
+}
+.who-text { font-size:.84rem; color:rgba(255,255,255,.55); line-height:1.7; }
+
+/* ─── TESTIMONIALS ─── */
+.testimonials-section { background:#fff; }
+.testi-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:56px;
+}
+.testi-card {
+  background:var(--ivory);
+  border:1px solid var(--border-soft);
+  border-radius:4px;
+  padding:36px 32px;
+  position:relative;
+  transition:box-shadow .3s;
+}
+.testi-card:hover { box-shadow:0 12px 40px rgba(139,30,63,.08); }
+.testi-quote-mark {
+  font-family:var(--serif);
+  font-size:5rem;
+  color:var(--gold);
+  opacity:.3;
+  line-height:1;
+  margin-bottom:-16px;
+  margin-top:-16px;
+}
+.testi-text {
+  font-family:var(--serif);
+  font-size:1.05rem;
+  font-style:italic;
+  color:var(--ink-soft);
+  line-height:1.7;
+  margin-bottom:24px;
+}
+.testi-result {
+  display:inline-block;
+  background:var(--crimson);
+  color:#fff;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:5px 14px;
+  border-radius:2px;
+  margin-bottom:20px;
+}
+.testi-author {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.testi-avatar {
+  width:44px; height:44px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--crimson),var(--gold));
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif);
+  font-size:1.1rem;
+  font-weight:600;
+  color:#fff;
+  flex-shrink:0;
+}
+.testi-name {
+  font-weight:700;
+  font-size:.88rem;
+  color:var(--ink);
+}
+.testi-biz {
+  font-size:.78rem;
+  color:var(--muted);
+  margin-top:2px;
+}
+.stars { color:var(--gold); font-size:.85rem; margin-bottom:4px; }
+
+/* ─── PROCESS ─── */
+.process-section { background:var(--ivory); }
+.process-steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  margin-top:64px;
+  position:relative;
+}
+.process-steps::before {
+  content:'';
+  position:absolute;
+  top:40px; left:16.6%; right:16.6%;
+  height:1px;
+  background:linear-gradient(90deg,var(--gold),var(--crimson),var(--gold));
+  opacity:.4;
+}
+.step {
+  text-align:center;
+  position:relative;
+}
+.step-num-wrap {
+  width:80px; height:80px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 24px;
+  position:relative;
+  z-index:1;
+  box-shadow: 0 4px 20px rgba(212,175,55,.2);
+}
+.step-num {
+  font-family:var(--serif);
+  font-size:1.8rem;
+  font-weight:600;
+  color:var(--crimson);
+}
+.step-title {
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+  font-size:.95rem;
+}
+.step-text { font-size:.85rem; color:var(--muted); line-height:1.7; }
+
+/* ─── VENDOR FORM ─── */
+.vendor-form-section {
+  background: linear-gradient(160deg, var(--crimson-deep) 0%, #3a0d1e 100%);
+  padding:100px 0;
+  position:relative;
+  overflow:hidden;
+}
+.vendor-form-section::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle at 10% 90%, rgba(212,175,55,.08) 0%, transparent 60%),
+                    radial-gradient(circle at 90% 10%, rgba(212,175,55,.06) 0%, transparent 60%);
+}
+.form-inner {
+  max-width:900px;
+  margin:0 auto;
+  padding:0 48px;
+  position:relative;
+  z-index:1;
+}
+.form-header { text-align:center; margin-bottom:56px; }
+.form-header .section-label { justify-content:center; }
+.form-header .section-label::before { display:none; }
+.form-header .section-title { color:#fff; }
+.form-header .section-body { color:rgba(255,255,255,.6); margin:0 auto; text-align:center; }
+
+.stall-options {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-bottom:40px;
+}
+.stall-option {
+  cursor:pointer;
+}
+.stall-option input { display:none; }
+.stall-label {
+  display:block;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:4px;
+  padding:20px;
+  text-align:center;
+  transition:all .2s;
+  cursor:pointer;
+}
+.stall-option input:checked ~ .stall-label {
+  background:rgba(212,175,55,.15);
+  border-color:var(--gold);
+}
+.stall-option:hover .stall-label {
+  border-color:rgba(212,175,55,.5);
+  background:rgba(212,175,55,.07);
+}
+.stall-size {
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:600;
+  color:var(--gold);
+  display:block;
+  margin-bottom:4px;
+}
+.stall-name { font-size:.82rem; font-weight:600; color:#fff; margin-bottom:4px; }
+.stall-price { font-size:.78rem; color:rgba(255,255,255,.5); }
+
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-bottom:20px;
+}
+.form-group {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.form-group.full { grid-column:1/-1; }
+.form-label {
+  font-size:.76rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+.form-input, .form-select, .form-textarea {
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:3px;
+  padding:14px 18px;
+  color:#fff;
+  font-family:var(--sans);
+  font-size:.9rem;
+  transition:border-color .2s, background .2s;
+  outline:none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color:rgba(255,255,255,.3); }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color:var(--gold);
+  background:rgba(212,175,55,.06);
+}
+.form-select { appearance:none; cursor:pointer; }
+.form-select option { background:var(--crimson-deep); color:#fff; }
+.form-textarea { resize:vertical; min-height:100px; }
+
+.form-submit {
+  width:100%;
+  background:var(--gold);
+  color:var(--crimson-deep);
+  border:none;
+  padding:18px;
+  font-family:var(--sans);
+  font-size:.92rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border-radius:3px;
+  cursor:pointer;
+  margin-top:8px;
+  transition:background .2s, transform .2s, box-shadow .2s;
+  box-shadow:0 4px 20px rgba(212,175,55,.25);
+}
+.form-submit:hover {
+  background:var(--gold-light);
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(212,175,55,.4);
+}
+.form-submit:disabled {
+  opacity:.6; cursor:not-allowed; transform:none;
+}
+.form-note {
+  text-align:center;
+  font-size:.78rem;
+  color:rgba(255,255,255,.35);
+  margin-top:16px;
+  line-height:1.6;
+}
+.form-message {
+  text-align:center;
+  color:#f87;
+  font-size:.88rem;
+  margin-top:12px;
+  min-height:20px;
+}
+
+/* ─── CUSTOMER SECTION ─── */
+.customer-section {
+  background:var(--ivory);
+  padding:100px 0;
+  border-top:4px solid var(--gold);
+}
+.customer-inner {
+  max-width:900px;
+  margin:0 auto;
+  padding:0 48px;
+}
+.customer-header { text-align:center; margin-bottom:56px; }
+.cust-form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-bottom:20px;
+}
+.cust-form-group {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.cust-form-group.full { grid-column:1/-1; }
+.cust-label {
+  font-size:.76rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.cust-input, .cust-select {
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:3px;
+  padding:14px 18px;
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:.9rem;
+  outline:none;
+  transition:border-color .2s;
+}
+.cust-input:focus, .cust-select:focus { border-color:var(--crimson); }
+.cust-input::placeholder { color:#bbb; }
+.cust-submit {
+  width:100%;
+  background:var(--crimson);
+  color:#fff;
+  border:none;
+  padding:18px;
+  font-family:var(--sans);
+  font-size:.92rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border-radius:3px;
+  cursor:pointer;
+  margin-top:8px;
+  transition:background .2s, transform .2s;
+}
+.cust-submit:hover { background:var(--crimson-deep); transform:translateY(-2px); }
+.cust-submit:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+.cust-message { text-align:center; color:var(--crimson); font-size:.88rem; margin-top:12px; min-height:20px; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background:var(--ink);
+  padding:60px 48px 40px;
+  border-top:1px solid rgba(212,175,55,.2);
+}
+.footer-inner {
+  max-width:1280px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:60px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.footer-brand-name {
+  font-family:var(--serif);
+  font-size:1.8rem;
+  font-weight:600;
+  color:#fff;
+  margin-bottom:4px;
+}
+.footer-brand-name span { color:var(--gold); }
+.footer-brand-tagline { font-size:.82rem; color:rgba(255,255,255,.4); letter-spacing:.08em; margin-bottom:20px; }
+.footer-desc { font-size:.85rem; color:rgba(255,255,255,.45); line-height:1.75; max-width:340px; }
+.footer-col-title {
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-links a {
+  font-size:.85rem;
+  color:rgba(255,255,255,.5);
+  transition:color .2s;
+}
+.footer-links a:hover { color:#fff; }
+.footer-bottom {
+  max-width:1280px;
+  margin:24px auto 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.footer-copy { font-size:.78rem; color:rgba(255,255,255,.25); }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:968px){
+  .nav { padding:16px 24px; }
+  .hero { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+  .hero-left { padding:120px 24px 64px; }
+  .pain-grid,
+  .solution-grid,
+  .who-grid,
+  .testi-grid,
+  .process-steps { grid-template-columns:1fr; }
+  .process-steps::before { display:none; }
+  .who-grid { grid-template-columns:1fr 1fr; }
+  .section { padding:64px 24px; }
+  .stall-options { grid-template-columns:1fr; }
+  .form-grid,
+  .cust-form-grid { grid-template-columns:1fr; }
+  .form-inner,
+  .customer-inner { padding:0 24px; }
+  .footer-inner { grid-template-columns:1fr; gap:32px; }
+  .trust-bar { gap:24px; padding:20px 24px; }
+  .pain-inner,
+  .who-inner { padding:0 24px; }
+  .footer { padding:48px 24px 32px; }
+}
+@media(max-width:560px){
+  .who-grid { grid-template-columns:1fr; }
+  .hero-proof { gap:20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-logo">The Deccan <span>Bazaar</span></div>
+  <a href="#vendor-form" class="nav-cta">Book Your Stall</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Hyderabad's Premier Exhibition · 2025</div>
+    <h1 class="hero-heading">
+      Your products deserve
+      <em>an audience.</em>
+    </h1>
+    <p class="hero-subhead">
+      Not just a stall — real customers, real sales, real growth.<br>
+      Hyderabad's most-loved exhibition for fashion & lifestyle brands.
+    </p>
+    <div class="hero-proof">
+      <div class="proof-item">
+        <div class="proof-num">3,000+</div>
+        <div class="proof-label">Visitors Per Event</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <div class="proof-num">120+</div>
+        <div class="proof-label">Brands Exhibited</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <div class="proof-num">78%</div>
+        <div class="proof-label">Vendors Return</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#vendor-form" class="btn-primary">Book My Stall — Limited Spots</a>
+      <a href="#customer-form" class="btn-secondary">Attend the Event</a>
+    </div>
+    <p class="urgency-note"><strong>Only 14 stalls remaining</strong> for the next edition · Registration closes soon</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-visual">
+        <!-- Decorative geometric SVG -->
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" stroke="#8B1E3F" stroke-width="1"/>
+          <circle cx="200" cy="200" r="140" stroke="#D4AF37" stroke-width="1"/>
+          <circle cx="200" cy="200" r="100" stroke="#8B1E3F" stroke-width="1"/>
+          <circle cx="200" cy="200" r="60" stroke="#D4AF37" stroke-width="1"/>
+          <line x1="20" y1="200" x2="380" y2="200" stroke="#8B1E3F" stroke-width="0.5"/>
+          <line x1="200" y1="20" x2="200" y2="380" stroke="#8B1E3F" stroke-width="0.5"/>
+          <line x1="73" y1="73" x2="327" y2="327" stroke="#D4AF37" stroke-width="0.5"/>
+          <line x1="327" y1="73" x2="73" y2="327" stroke="#D4AF37" stroke-width="0.5"/>
+          <polygon points="200,40 340,290 60,290" stroke="#8B1E3F" stroke-width="1" fill="none"/>
+          <polygon points="200,360 60,110 340,110" stroke="#D4AF37" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="hero-visual-text">
+          <div class="hero-visual-title">THE<br>DECCAN<br>BAZAAR</div>
+          <div class="hero-visual-sub">Hyderabad</div>
+          <div class="hero-visual-tagline">Fashion · Lifestyle · Culture</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">👗</div>
+    Fashion & Apparel
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">💎</div>
+    Jewellery & Accessories
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🪔</div>
+    Home Décor & Lifestyle
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🌿</div>
+    Handmade & Artisan
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🛍️</div>
+    D2C & Instagram Brands
+  </div>
+</div>
+
+<!-- PAIN SECTION -->
+<section class="pain-section">
+  <div class="pain-inner">
+    <div class="pain-grid">
+      <div class="pain-copy">
+        <div class="section-label">We understand your struggle</div>
+        <h2 class="section-title" style="color:#fff">You start every morning<br>with one question.</h2>
+        <blockquote class="pain-quote">
+          "Where are today's customers coming from?"
+        </blockquote>
+        <p class="section-body">
+          Your products are beautiful. Your craft is real. But Instagram reach is falling, 
+          ads are expensive, and the growth you know you deserve keeps feeling just out of reach.
+          <br><br>
+          The Deccan Bazaar was built for exactly this moment.
+        </p>
+      </div>
+      <div class="pain-cards">
+        <div class="pain-card">
+          <div class="pain-card-icon">📉</div>
+          <div>
+            <div class="pain-card-title">Instagram reach is dying</div>
+            <div class="pain-card-text">Organic visibility has collapsed. You're posting consistently but fewer people are seeing your work every week.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">💸</div>
+          <div>
+            <div class="pain-card-title">Inconsistent monthly sales</div>
+            <div class="pain-card-text">"Some months are great, some are terrible." You can't predict revenue and that uncertainty is exhausting.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">🔍</div>
+          <div>
+            <div class="pain-card-title">Customers don't discover you</div>
+            <div class="pain-card-text">You're not getting in front of buyers who are ready to spend. Your brand is invisible to the people who would love it most.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">🎯</div>
+          <div>
+            <div class="pain-card-title">Past exhibitions disappointed</div>
+            <div class="pain-card-text">Paid the stall fees, showed up, and the footfall wasn't there. You need proof before you invest again.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION SECTION -->
+<section class="section solution-section">
+  <div class="section-label">Why The Deccan Bazaar works</div>
+  <h2 class="section-title">We don't just give you space.<br>We give you <em>customers.</em></h2>
+
+  <div class="solution-grid">
+    <div>
+      <p class="section-body" style="margin-bottom:32px;">
+        Every decision we make — venue selection, marketing spend, audience targeting, layout design — 
+        is built around one metric: your sales per day at the stall.
+        <br><br>
+        This isn't just an exhibition. It's a curated marketplace where your ideal customers 
+        come specifically to discover and buy from brands like yours.
+      </p>
+      <a href="#vendor-form" class="btn-primary" style="display:inline-block;max-width:300px">
+        Reserve Your Stall Today
+      </a>
+    </div>
+    <div class="solution-cards">
+      <div class="sol-card">
+        <div class="sol-num">01</div>
+        <div>
+          <div class="sol-title">Proven footfall — not promises</div>
+          <div class="sol-text">3,000+ visitors per event, driven by targeted marketing across Instagram, Facebook and Google. We show you crowd videos, not just claims.</div>
+        </div>
+      </div>
+      <div class="sol-card">
+        <div class="sol-num">02</div>
+        <div>
+          <div class="sol-title">The right audience, not just any crowd</div>
+          <div class="sol-text">Buyers from Banjara Hills, Jubilee Hills, Kondapur, Gachibowli — women who are ready to buy fashion, jewellery and lifestyle products.</div>
+        </div>
+      </div>
+      <div class="sol-card">
+        <div class="sol-num">03</div>
+        <div>
+          <div class="sol-title">Brand visibility beyond the event</div>
+          <div class="sol-text">Pre-event promotion, social media features, and post-event reels mean your brand stays visible long after the bazaar ends.</div>
+        </div>
+      </div>
+      <div class="sol-card">
+        <div class="sol-num">04</div>
+        <div>
+          <div class="sol-title">New customers who come back</div>
+          <div class="sol-text">Exhibition buyers are high-intent. Most vendors report repeat WhatsApp customers, Instagram follows, and direct purchases for 90+ days after the event.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SECTION -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="section-label" style="color:var(--gold)">Made for brands like yours</div>
+    <h2 class="section-title" style="color:#fff">This is your event if you are…</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-emoji">👗</div>
+        <div class="who-title">Boutique Owner</div>
+        <div class="who-text">You have a beautiful collection but need more people walking through the door. The Bazaar brings your customers to you.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🥻</div>
+        <div class="who-title">Saree Entrepreneur</div>
+        <div class="who-text">Your sarees need to be felt, not just seen on screen. The Bazaar gives buyers that tactile, in-person discovery experience.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💍</div>
+        <div class="who-title">Jewellery Seller</div>
+        <div class="who-text">High-value items sell best in person. Our curated audience of discerning Hyderabad women comes ready to accessorise.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🕯️</div>
+        <div class="who-title">Home Décor Brand</div>
+        <div class="who-text">Your products transform spaces. Let them transform your business too by getting in front of buyers who invest in their homes.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">✨</div>
+        <div class="who-title">Handmade Artisan</div>
+        <div class="who-text">Your craft deserves to be celebrated in person. The Bazaar attracts customers who specifically seek out artisan and handcrafted goods.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">📱</div>
+        <div class="who-title">Instagram / D2C Brand</div>
+        <div class="who-text">You've built an audience online. Now bring them offline and turn followers into loyal, in-person customers and brand advocates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section">
+  <div class="section-label">Vendor success stories</div>
+  <h2 class="section-title">The proof is in the results.</h2>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote-mark">"</div>
+      <div class="testi-result">₹68,000 in 2 days</div>
+      <p class="testi-text">
+        I was nervous investing in a stall after a bad experience elsewhere. But the crowd 
+        at Deccan Bazaar was unreal — and these were actual buyers, not just browsers. 
+        I've already booked for the next edition.
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Priya Sharma</div>
+          <div class="testi-biz">Priya's Ethnic Boutique · Banjara Hills</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote-mark">"</div>
+      <div class="testi-result">80+ New Instagram Followers</div>
+      <p class="testi-text">
+        The marketing Deccan Bazaar did before the event was incredible. Customers 
+        were walking up to our stall saying they'd seen us on Instagram and specifically 
+        came to find us. That never happens at other exhibitions.
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Roshni Agarwal</div>
+          <div class="testi-biz">Silver Thread Jewellery · Jubilee Hills</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote-mark">"</div>
+      <div class="testi-result">Sold out entire saree collection</div>
+      <p class="testi-text">
+        This was my third year as a vendor. I keep coming back because the ROI is 
+        consistent. The team is professional, the venue is beautiful, and the customers 
+        are exactly the right demographic for premium sarees.
+      </p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Sunita Reddy</div>
+          <div class="testi-biz">Kanchi Saree Collection · Madhapur</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section">
+  <div class="section-label">Simple 3-step process</div>
+  <h2 class="section-title">From registration to first sale<br>in under <em>7 days.</em></h2>
+
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num-wrap"><span class="step-num">1</span></div>
+      <div class="step-title">Fill the registration form</div>
+      <div class="step-text">Takes 3 minutes. Tell us about your brand, category, and preferred stall size. No commitment yet — just an application.</div>
+    </div>
+    <div class="step">
+      <div class="step-num-wrap"><span class="step-num">2</span></div>
+      <div class="step-title">Get confirmed & pay</div>
+      <div class="step-text">Our team calls you within 24 hours to confirm stall availability, share event details, and complete the booking with a simple payment.</div>
+    </div>
+    <div class="step">
+      <div class="step-num-wrap"><span class="step-num">3</span></div>
+      <div class="step-title">Show up & sell</div>
+      <div class="step-text">Set up your stall, meet your new customers, and watch your brand grow. We handle all the marketing, footfall, and logistics.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VENDOR FORM -->
+<section class="vendor-form-section" id="vendor-form">
+  <div class="form-inner">
+    <div class="form-header">
+      <div class="section-label">Limited stalls available</div>
+      <h2 class="section-title">Book Your Stall</h2>
+      <p class="section-body">
+        Fill in the form below and our team will contact you within 24 hours with stall 
+        availability and event details.
+      </p>
+    </div>
+
+    <!-- Stall size selector -->
+    <div class="stall-options" style="grid-template-columns:1fr 1fr;">
+      <label class="stall-option">
+        <input type="radio" name="stallSizePreview" value="Standard (2x3 metres)" checked>
+        <div class="stall-label">
+          <span class="stall-size">2 × 3 m</span>
+          <span class="stall-name">Standard Stall</span>
+          <span class="stall-price">Ideal for compact displays & 1–2 racks</span>
+        </div>
+      </label>
+      <label class="stall-option">
+        <input type="radio" name="stallSizePreview" value="Premium (3x3 metres)">
+        <div class="stall-label">
+          <span class="stall-size">3 × 3 m</span>
+          <span class="stall-name">Premium Stall</span>
+          <span class="stall-price">Most popular · maximum display space</span>
+        </div>
+      </label>
+    </div>
+
+    <form id="vendorRegistration" novalidate>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="businessName">Business Name *</label>
+          <input class="form-input" type="text" id="businessName" name="businessName" placeholder="Your brand name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ownerName">Your Name *</label>
+          <input class="form-input" type="text" id="ownerName" name="ownerName" placeholder="Full name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vendorMobile">Mobile Number *</label>
+          <input class="form-input" type="tel" id="vendorMobile" name="vendorMobile" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vendorEmail">Email Address</label>
+          <input class="form-input" type="email" id="vendorEmail" name="vendorEmail" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="instagram">Instagram Handle</label>
+          <input class="form-input" type="text" id="instagram" name="instagram" placeholder="@yourbrand">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="category">Product Category *</label>
+          <select class="form-select" id="category" name="category" required>
+            <option value="" disabled selected>Select your category</option>
+            <option>Fashion & Boutique</option>
+            <option>Sarees & Ethnic Wear</option>
+            <option>Jewellery & Accessories</option>
+            <option>Home Décor & Lifestyle</option>
+            <option>Handmade & Artisan</option>
+            <option>Beauty & Skincare</option>
+            <option>Kids & Baby</option>
+            <option>Food & Gourmet</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="stallSize">Preferred Stall Size *</label>
+          <select class="form-select" id="stallSize" name="stallSize" required>
+            <option value="" disabled selected>Select stall size</option>
+            <option>Standard (2x3 metres)</option>
+            <option>Premium (3x3 metres)</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="productDescription">What products will you be selling? *</label>
+          <textarea class="form-textarea" id="productDescription" name="productDescription" placeholder="e.g. Hand-embroidered kurtis, Kanjeevaram sarees, silver oxidised jewellery, scented candles… Be as specific as you like — this helps us curate the right mix of brands at the event." style="min-height:90px;" required></textarea>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="stallPlacement">Any stall placement preferences?</label>
+          <select class="form-select" id="stallPlacement" name="stallPlacement">
+            <option value="" selected>No preference / Organiser's choice</option>
+            <option>Entry / High-footfall area</option>
+            <option>Corner stall (two open sides)</option>
+            <option>Near food & beverage zone</option>
+            <option>Near similar category brands</option>
+            <option>Away from direct competitors</option>
+            <option>Ground floor preferred</option>
+            <option>Other (mention in notes below)</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="notes">Anything else you'd like us to know?</label>
+          <textarea class="form-textarea" id="notes" name="notes" placeholder="Past exhibition experience, special display requirements, electrical needs, extra tables, etc."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="form-submit">
+        Book My Stall — Get Confirmed in 24 Hours
+      </button>
+      <div class="form-message" id="vendorMessage"></div>
+
+      <!-- Inline success state (hidden until submit) -->
+      <div id="vendorSuccess" style="display:none;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.35);border-radius:6px;padding:32px;text-align:center;margin-top:24px;">
+        <div style="font-size:2.4rem;margin-bottom:12px;">🎉</div>
+        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:10px;">We've received your application!</div>
+        <div style="font-size:.92rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:440px;margin:0 auto;">
+          Our team will shortly get in contact with you to confirm stall availability, 
+          share pricing details, and answer any questions you have.<br><br>
+          <strong style="color:var(--gold);">Keep an eye on your phone 📱</strong>
+        </div>
+      </div>
+
+      <p class="form-note" id="vendorFormNote">
+        🔒 Your information is safe with us. No spam, ever.<br>
+        By submitting, you agree to be contacted by The Deccan Bazaar team only.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- CUSTOMER SECTION -->
+<section class="customer-section" id="customer-form">
+  <div class="customer-inner">
+    <div class="customer-header">
+      <div class="section-label" style="justify-content:center">
+        <span style="width:32px;height:1px;background:var(--gold);display:block"></span>
+        For Visitors
+      </div>
+      <h2 class="section-title" style="text-align:center">
+        Attend The Deccan Bazaar.<br>Discover 100+ Brands.
+      </h2>
+      <p class="section-body" style="text-align:center;margin:0 auto">
+        Register to get early access, exclusive discounts, and notifications about 
+        upcoming events before general public announcement.
+      </p>
+    </div>
+
+    <form id="customerRegistration" novalidate>
+      <div class="cust-form-grid">
+        <div class="cust-form-group">
+          <label class="cust-label" for="customerName">Your Name *</label>
+          <input class="cust-input" type="text" id="customerName" name="customerName" placeholder="Full name" required>
+        </div>
+        <div class="cust-form-group">
+          <label class="cust-label" for="customerMobile">Mobile Number *</label>
+          <input class="cust-input" type="tel" id="customerMobile" name="customerMobile" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="cust-form-group">
+          <label class="cust-label" for="customerEmail">Email Address</label>
+          <input class="cust-input" type="email" id="customerEmail" name="customerEmail" placeholder="your@email.com">
+        </div>
+        <div class="cust-form-group">
+          <label class="cust-label" for="city">City / Area</label>
+          <input class="cust-input" type="text" id="city" name="city" placeholder="e.g. Banjara Hills">
+        </div>
+        <div class="cust-form-group full">
+          <label class="cust-label" for="interest">What are you most interested in? *</label>
+          <select class="cust-select" id="interest" name="interest" required>
+            <option value="" disabled selected>Select your interest</option>
+            <option>Fashion & Clothing</option>
+            <option>Jewellery & Accessories</option>
+            <option>Sarees & Ethnic Wear</option>
+            <option>Home Décor</option>
+            <option>Handmade & Artisan Products</option>
+            <option>Beauty & Skincare</option>
+            <option>Everything!</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="cust-submit">
+        Register as Visitor — Get Early Access
+      </button>
+      <div class="cust-message" id="customerMessage"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">The Deccan <span>Bazaar</span></div>
+      <div class="footer-brand-tagline">Hyderabad's Premier Fashion & Lifestyle Exhibition</div>
+      <p class="footer-desc">
+        Connecting Hyderabad's finest boutique owners, jewellery sellers, saree entrepreneurs 
+        and D2C brands with the customers who love them most.
+      </p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#vendor-form">Book a Stall</a></li>
+        <li><a href="#customer-form">Attend the Event</a></li>
+        <li><a href="#">Past Events</a></li>
+        <li><a href="#">Vendor FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/thedeccanbazaar">@thedeccanbazaar</a></li>
+        <li><a href="https://wa.me/919999999999">WhatsApp Us</a></li>
+        <li><a href="mailto:hello@thedeccanbazaar.in">hello@thedeccanbazaar.in</a></li>
+        <li><a href="#">Hyderabad, Telangana</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 The Deccan Bazaar. All rights reserved.</span>
+    <span class="footer-copy">Built with love in Hyderabad 🌺</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhavp_I0xoiWk7aE7PcX4S-92C8pxWcR-OsA1iClhXFfrqW3KGKG6bFYOCBuMIcFdr/exec";
+
+/* Nav scroll effect */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* Stall size selector syncs with the hidden form field */
+document.querySelectorAll('input[name="stallSizePreview"]').forEach(radio => {
+  radio.addEventListener('change', function(){
+    const stallSel = document.getElementById('stallSize');
+    stallSel.value = this.value;
+  });
+});
+
+/* Vendor Form Submit */
+document.getElementById('vendorRegistration').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.innerText = 'Submitting…';
+  btn.disabled = true;
+
+  const data = {
+    type:               'vendor',
+    businessName:       document.getElementById('businessName').value,
+    ownerName:          document.getElementById('ownerName').value,
+    mobile:             document.getElementById('vendorMobile').value,
+    email:              document.getElementById('vendorEmail').value,
+    instagram:          document.getElementById('instagram').value,
+    category:           document.getElementById('category').value,
+    stallSize:          document.getElementById('stallSize').value,
+    productDescription: document.getElementById('productDescription').value,
+    stallPlacement:     document.getElementById('stallPlacement').value,
+    notes:              document.getElementById('notes').value
+  };
+
+  try {
+    await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', body:JSON.stringify(data) });
+    // Show inline success — do NOT redirect
+    this.style.display = 'none';
+    document.getElementById('vendorSuccess').style.display = 'block';
+    document.getElementById('vendorFormNote').style.display = 'none';
+    // Smooth scroll to success message
+    document.getElementById('vendorSuccess').scrollIntoView({ behavior:'smooth', block:'center' });
+  } catch(err) {
+    document.getElementById('vendorMessage').textContent = 'Submission failed. Please try again.';
+    btn.disabled = false;
+    btn.innerText = 'Book My Stall — Get Confirmed in 24 Hours';
+  }
+});
+
+/* Customer Form Submit */
+document.getElementById('customerRegistration').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.innerText = 'Submitting…';
+  btn.disabled = true;
+
+  const data = {
+    type:     'customer',
+    name:     document.getElementById('customerName').value,
+    mobile:   document.getElementById('customerMobile').value,
+    email:    document.getElementById('customerEmail').value,
+    city:     document.getElementById('city').value,
+    category: document.getElementById('interest').value
+  };
+
+  try {
+    await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', body:JSON.stringify(data) });
+    window.location.href = 'customer-thankyou.html';
+  } catch(err) {
+    document.getElementById('customerMessage').textContent = 'Submission failed. Please try again.';
+    btn.disabled = false;
+    btn.innerText = 'Register as Visitor — Get Early Access';
+  }
+});
+
+/* Scroll reveal animation */
+const observerOpts = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOpts);
+
+document.querySelectorAll('.pain-card, .sol-card, .who-card, .testi-card, .step').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(28px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
