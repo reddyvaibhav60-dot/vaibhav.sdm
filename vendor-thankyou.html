@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stall Request Received | The Deccan Bazaar</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLPFZMN2');</script>
+<!-- End Google Tag Manager -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,8 +44,6 @@ body::before {
   background-image: radial-gradient(circle at 15% 85%, rgba(212,175,55,.12) 0%, transparent 55%),
                     radial-gradient(circle at 85% 15%, rgba(212,175,55,.08) 0%, transparent 55%);
 }
-
-/* Decorative rings */
 .bg-ring {
   position:absolute;
   border-radius:50%;
@@ -45,7 +52,6 @@ body::before {
   transform:translate(-50%,-50%);
   pointer-events:none;
 }
-
 .card {
   background: rgba(250,246,239,0.97);
   border-radius:6px;
@@ -58,12 +64,10 @@ body::before {
   box-shadow: 0 32px 80px rgba(0,0,0,.3), 0 0 0 1px rgba(212,175,55,.2);
   animation: cardIn .8s cubic-bezier(.22,.68,0,1.2) both;
 }
-
 @keyframes cardIn {
   from { opacity:0; transform:scale(.92) translateY(20px); }
   to   { opacity:1; transform:scale(1) translateY(0); }
 }
-
 .card-top-border {
   position:absolute;
   top:0; left:0; right:0;
@@ -71,7 +75,6 @@ body::before {
   background:linear-gradient(90deg, var(--crimson), var(--gold), var(--crimson));
   border-radius:6px 6px 0 0;
 }
-
 .icon-wrap {
   width: 88px; height: 88px;
   border-radius:50%;
@@ -82,12 +85,10 @@ body::before {
   font-size: 2.4rem;
   animation: iconPop .6s .3s cubic-bezier(.22,.68,0,1.4) both;
 }
-
 @keyframes iconPop {
   from { opacity:0; transform:scale(0.4); }
   to   { opacity:1; transform:scale(1); }
 }
-
 .badge {
   display:inline-block;
   background: rgba(212,175,55,.15);
@@ -102,7 +103,6 @@ body::before {
   margin-bottom:20px;
   animation: fadeUp .6s .4s ease both;
 }
-
 h1 {
   font-family: var(--serif);
   font-size: 2.4rem;
@@ -112,9 +112,7 @@ h1 {
   margin-bottom:16px;
   animation: fadeUp .6s .45s ease both;
 }
-
 h1 em { font-style:italic; color:var(--crimson); }
-
 .subtitle {
   font-size:1.05rem;
   color:#555;
@@ -122,7 +120,6 @@ h1 em { font-style:italic; color:var(--crimson); }
   margin-bottom:36px;
   animation: fadeUp .6s .5s ease both;
 }
-
 .steps {
   display:flex;
   flex-direction:column;
@@ -131,7 +128,6 @@ h1 em { font-style:italic; color:var(--crimson); }
   text-align:left;
   animation: fadeUp .6s .55s ease both;
 }
-
 .step-item {
   display:flex;
   gap:16px;
@@ -141,7 +137,6 @@ h1 em { font-style:italic; color:var(--crimson); }
   border-radius:4px;
   padding:16px 20px;
 }
-
 .step-icon {
   width:36px; height:36px;
   border-radius:50%;
@@ -151,19 +146,8 @@ h1 em { font-style:italic; color:var(--crimson); }
   font-size:1rem;
   flex-shrink:0;
 }
-
-.step-content-title {
-  font-size:.85rem;
-  font-weight:700;
-  color:var(--crimson-deep);
-  margin-bottom:3px;
-}
-.step-content-text {
-  font-size:.8rem;
-  color:#777;
-  line-height:1.5;
-}
-
+.step-content-title { font-size:.85rem; font-weight:700; color:var(--crimson-deep); margin-bottom:3px; }
+.step-content-text { font-size:.8rem; color:#777; line-height:1.5; }
 .btn {
   display:inline-block;
   background:var(--crimson);
@@ -179,25 +163,13 @@ h1 em { font-style:italic; color:var(--crimson); }
   box-shadow:0 4px 16px rgba(139,30,63,.3);
   animation: fadeUp .6s .6s ease both;
 }
-.btn:hover {
-  background:var(--crimson-deep);
-  transform:translateY(-2px);
-  box-shadow:0 8px 28px rgba(139,30,63,.4);
-}
-
-.footer-note {
-  font-size:.76rem;
-  color:#aaa;
-  margin-top:20px;
-  animation: fadeUp .6s .65s ease both;
-}
+.btn:hover { background:var(--crimson-deep); transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,30,63,.4); }
+.footer-note { font-size:.76rem; color:#aaa; margin-top:20px; animation: fadeUp .6s .65s ease both; }
 .footer-note strong { color:var(--crimson); }
-
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(16px); }
   to   { opacity:1; transform:translateY(0); }
 }
-
 @media(max-width:560px){
   .card { padding:40px 24px; }
   h1 { font-size:1.9rem; }
@@ -206,24 +178,24 @@ h1 em { font-style:italic; color:var(--crimson); }
 </head>
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPFZMN2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div class="bg-ring" style="width:600px;height:600px;"></div>
 <div class="bg-ring" style="width:900px;height:900px;"></div>
 <div class="bg-ring" style="width:1200px;height:1200px;"></div>
 
 <div class="card">
   <div class="card-top-border"></div>
-
   <div class="icon-wrap">🎉</div>
-
   <div class="badge">Application Received</div>
-
   <h1>Your stall request<br>is <em>confirmed.</em></h1>
-
   <p class="subtitle">
     Welcome to The Deccan Bazaar family. Our team has received your application 
     and will contact you within <strong>24 hours</strong> to finalise your stall.
   </p>
-
   <div class="steps">
     <div class="step-item">
       <div class="step-icon">📞</div>
@@ -247,14 +219,21 @@ h1 em { font-style:italic; color:var(--crimson); }
       </div>
     </div>
   </div>
-
   <a href="index.html" class="btn">Back to Home</a>
-
   <p class="footer-note">
-    Questions? WhatsApp us at <strong>+91 XXXXX XXXXX</strong><br>
+    Questions? WhatsApp us at <strong>+91 93976 06162</strong><br>
     or DM us on Instagram <strong>@thedeccanbazaar</strong>
   </p>
 </div>
+
+<!-- GTM conversion event for vendor thank-you page view -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'vendor_registration_complete',
+    page: 'vendor_thankyou'
+  });
+</script>
 
 </body>
 </html>
