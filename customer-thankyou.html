@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You're Registered! | The Deccan Bazaar</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLPFZMN2');</script>
+<!-- End Google Tag Manager -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,8 +45,6 @@ body::before {
   background-image: radial-gradient(circle at 20% 80%, rgba(212,175,55,.18) 0%, transparent 55%),
                     radial-gradient(circle at 80% 20%, rgba(139,30,63,.2) 0%, transparent 55%);
 }
-
-/* Floating gold dots */
 .dot {
   position:absolute;
   border-radius:50%;
@@ -50,7 +57,6 @@ body::before {
   50%  { opacity:.2; }
   100% { transform:translateY(-100vh) scale(.5); opacity:0; }
 }
-
 .card {
   background: rgba(250,246,239,0.97);
   border-radius:6px;
@@ -63,19 +69,16 @@ body::before {
   box-shadow:0 32px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(212,175,55,.25);
   animation: cardIn .8s cubic-bezier(.22,.68,0,1.2) both;
 }
-
 @keyframes cardIn {
   from { opacity:0; transform:scale(.92) translateY(20px); }
   to   { opacity:1; transform:scale(1) translateY(0); }
 }
-
 .card-top-border {
   position:absolute;
   top:0; left:0; right:0; height:4px;
   background:linear-gradient(90deg, var(--gold), var(--crimson), var(--gold));
   border-radius:6px 6px 0 0;
 }
-
 .icon-wrap {
   width:88px; height:88px;
   border-radius:50%;
@@ -86,12 +89,10 @@ body::before {
   font-size:2.4rem;
   animation:iconPop .6s .3s cubic-bezier(.22,.68,0,1.4) both;
 }
-
 @keyframes iconPop {
   from { opacity:0; transform:scale(.4) rotate(-20deg); }
   to   { opacity:1; transform:scale(1) rotate(0); }
 }
-
 .badge {
   display:inline-block;
   background:rgba(212,175,55,.15);
@@ -106,7 +107,6 @@ body::before {
   margin-bottom:20px;
   animation:fadeUp .6s .4s ease both;
 }
-
 h1 {
   font-family:var(--serif);
   font-size:2.4rem;
@@ -117,7 +117,6 @@ h1 {
   animation:fadeUp .6s .45s ease both;
 }
 h1 em { font-style:italic; color:var(--gold); }
-
 .subtitle {
   font-size:1.05rem;
   color:#555;
@@ -125,8 +124,6 @@ h1 em { font-style:italic; color:var(--gold); }
   margin-bottom:36px;
   animation:fadeUp .6s .5s ease both;
 }
-
-/* What to expect */
 .perks {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -135,7 +132,6 @@ h1 em { font-style:italic; color:var(--gold); }
   text-align:left;
   animation:fadeUp .6s .55s ease both;
 }
-
 .perk {
   display:flex;
   gap:12px;
@@ -145,20 +141,9 @@ h1 em { font-style:italic; color:var(--gold); }
   border-radius:4px;
   padding:16px;
 }
-.perk-icon {
-  font-size:1.3rem;
-  flex-shrink:0;
-  margin-top:1px;
-}
-.perk-title {
-  font-size:.82rem;
-  font-weight:700;
-  color:var(--crimson-deep);
-  margin-bottom:3px;
-}
+.perk-icon { font-size:1.3rem; flex-shrink:0; margin-top:1px; }
+.perk-title { font-size:.82rem; font-weight:700; color:var(--crimson-deep); margin-bottom:3px; }
 .perk-text { font-size:.76rem; color:#888; line-height:1.5; }
-
-/* Social share nudge */
 .social-nudge {
   background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(139,30,63,.06));
   border:1px solid rgba(212,175,55,.25);
@@ -167,19 +152,9 @@ h1 em { font-style:italic; color:var(--gold); }
   margin-bottom:32px;
   animation:fadeUp .6s .58s ease both;
 }
-.social-nudge-text {
-  font-family:var(--serif);
-  font-size:1.1rem;
-  font-style:italic;
-  color:var(--crimson-deep);
-  margin-bottom:10px;
-}
-.social-nudge-sub {
-  font-size:.78rem;
-  color:#888;
-}
+.social-nudge-text { font-family:var(--serif); font-size:1.1rem; font-style:italic; color:var(--crimson-deep); margin-bottom:10px; }
+.social-nudge-sub { font-size:.78rem; color:#888; }
 .social-nudge-sub strong { color:var(--crimson); }
-
 .btn-row {
   display:flex;
   gap:12px;
@@ -187,7 +162,6 @@ h1 em { font-style:italic; color:var(--gold); }
   flex-wrap:wrap;
   animation:fadeUp .6s .6s ease both;
 }
-
 .btn-primary {
   background:var(--crimson);
   color:#fff;
@@ -202,7 +176,6 @@ h1 em { font-style:italic; color:var(--gold); }
   box-shadow:0 4px 16px rgba(139,30,63,.3);
 }
 .btn-primary:hover { background:var(--crimson-deep); transform:translateY(-2px); }
-
 .btn-outline {
   background:transparent;
   color:var(--crimson);
@@ -217,7 +190,6 @@ h1 em { font-style:italic; color:var(--gold); }
   transition:all .2s;
 }
 .btn-outline:hover { background:var(--crimson); color:#fff; transform:translateY(-2px); }
-
 .btn-whatsapp {
   display:inline-flex;
   align-items:center;
@@ -238,20 +210,12 @@ h1 em { font-style:italic; color:var(--gold); }
   box-shadow:0 4px 16px rgba(37,211,102,.3);
 }
 .btn-whatsapp:hover { background:#1ebe5d; transform:translateY(-2px); }
-
-.footer-note {
-  font-size:.76rem;
-  color:#aaa;
-  margin-top:24px;
-  animation:fadeUp .6s .65s ease both;
-}
+.footer-note { font-size:.76rem; color:#aaa; margin-top:24px; animation:fadeUp .6s .65s ease both; }
 .footer-note strong { color:var(--gold); }
-
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(16px); }
   to   { opacity:1; transform:translateY(0); }
 }
-
 @media(max-width:560px){
   .card { padding:40px 24px; }
   h1 { font-size:1.9rem; }
@@ -261,7 +225,11 @@ h1 em { font-style:italic; color:var(--gold); }
 </head>
 <body>
 
-<!-- Floating dots -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPFZMN2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div class="dot" style="width:8px;height:8px;left:10%;animation-duration:8s;animation-delay:0s;top:100%"></div>
 <div class="dot" style="width:5px;height:5px;left:25%;animation-duration:12s;animation-delay:2s;top:100%"></div>
 <div class="dot" style="width:10px;height:10px;left:60%;animation-duration:9s;animation-delay:1s;top:100%"></div>
@@ -270,18 +238,13 @@ h1 em { font-style:italic; color:var(--gold); }
 
 <div class="card">
   <div class="card-top-border"></div>
-
   <div class="icon-wrap">🎊</div>
-
   <div class="badge">You're On The List</div>
-
   <h1>See you at the<br><em>Bazaar!</em></h1>
-
   <p class="subtitle">
     You've successfully registered for The Deccan Bazaar. Get ready to discover 
     100+ handpicked fashion, jewellery and lifestyle brands from across Hyderabad.
   </p>
-
   <div class="perks">
     <div class="perk">
       <div class="perk-icon">📍</div>
@@ -312,31 +275,34 @@ h1 em { font-style:italic; color:var(--gold); }
       </div>
     </div>
   </div>
-
   <div class="social-nudge">
     <div class="social-nudge-text">Know someone who'd love this?</div>
     <div class="social-nudge-sub">Share The Deccan Bazaar with your friends — tag us <strong>@thedeccanbazaar</strong> on Instagram</div>
   </div>
-
   <div class="btn-row">
     <a href="/" class="btn-primary">Back to Home</a>
     <a href="https://instagram.com/thedeccanbazaar" class="btn-outline">Follow Us</a>
   </div>
-
   <a href="https://wa.me/919397606162?text=Hi!%20I%20just%20registered%20as%20a%20visitor%20for%20The%20Deccan%20Bazaar.%20Looking%20forward%20to%20the%20event!" class="btn-whatsapp" target="_blank" rel="noopener">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="flex-shrink:0">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
     Chat with us on WhatsApp
   </a>
-
   <p class="footer-note">
     Updates will be sent to your WhatsApp &amp; email.<br>
     Questions? DM us at <strong>@thedeccanbazaar</strong>
   </p>
 </div>
 
+<!-- GTM conversion event for customer thank-you page view -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'customer_registration_complete',
+    page: 'customer_thankyou'
+  });
+</script>
+
 </body>
 </html>
-
-        
